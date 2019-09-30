@@ -1,1 +1,10 @@
-Seignovertetal2019.pdf
+# Ouput file
+article.pdf
+
+# Temporary files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.fls
+*.spl
