@@ -1,0 +1,36 @@
+\documentclass[review, authoryear, hidelinks]{elsarticle}
+
+\usepackage{lineno, hyperref, siunitx, mhchem, booktabs, cuted, numcompress, xcolor}
+\usepackage[margin=2.5cm]{geometry}
+
+\journal{Icarus}
+\bibliographystyle{icarus} % Icarus bib style
+
+\modulolinenumbers[1]
+
+\begin{document}
+
+\begin{frontmatter}
+    \title{Seasonal variations of Titan's upper atmosphere during the Cassini Mission}
+
+    \input{authors.tex}
+
+    \begin{abstract}
+        \input{abstract.tex}
+    \end{abstract}
+
+    \begin{keyword}
+    Cassini \sep Titan \sep Haze \sep Season cycle
+    \end{keyword}
+\end{frontmatter}
+
+\begin{linenumbers}
+
+    \input{intro.tex}
+
+\end{linenumbers}
+
+\section*{References}
+\bibliography{biblio}
+
+\end{document}
