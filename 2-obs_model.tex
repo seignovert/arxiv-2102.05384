@@ -106,3 +106,15 @@ Instead, we decided to solve the system by minimizing globally the difference be
 using a Levenberg-Marquardt minimization. Therefore, we obtain simultaneously all the $\beta_i$ at once.
 Moreover, the tangential opacity along a line of sight ($\tau_{los}$) is consider opaque when it value reach 3.
 Beyond this threshold, we do not retrieve the value of $\beta$.
+An example of inversion is presented in the figure~\ref{fig:model_uncertainties}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\textwidth]{Fig/Model_uncertainties.png}
+    \caption{$I/F$ intensity profile extracted on the image \textbf{N1551888681\_1} at the photometric
+             equator ([\ang{45}S, \ang{50}S] and [\ang{76}W, \ang{79}W]). The original ISS pixels
+             are resampled on the grid before the inversion. The uncertainties on the retrieved
+             extinction profile $\beta$ is calculated to match the $1 \sigma$ dispersion of the
+             $I/F$ pixels.}
+    \label{fig:model_uncertainties}
+\end{figure}
