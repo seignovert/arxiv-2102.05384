@@ -110,12 +110,18 @@ An example of inversion is presented in the figure~\ref{fig:model_uncertainties}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=\textwidth]{Fig/Model_uncertainties.png}
-    \caption{$I/F$ intensity profile extracted on the image \textbf{N1551888681\_1} at the photometric
-             equator ([\ang{45}S, \ang{50}S] and [\ang{76}W, \ang{79}W]). The original ISS pixels
-             are resampled on the grid before the inversion. The uncertainties on the retrieved
-             extinction profile $\beta$ is calculated to match the $1 \sigma$ dispersion of the
-             $I/F$ pixels. We can see that the model can explain the observation down to 300 km.
+    \includegraphics[height=6.5cm]{Fig/N1551888681_sampling.png}
+    \includegraphics[height=6.5cm]{Fig/Model_uncertainties.png}
+    \caption{Left: Log scale representation of the $I/F$ intensity for the image
+             \textbf{N1551888681\_1} taken in March 2007. The data are sampled at the limb by
+             bins of \ang{5}. The red area correspond to the bin at the photometric
+             equator ([\ang{45}S, \ang{50}S] and [\ang{76}W, \ang{79}W]). The pixel scale
+             (7.9 km/pixel) is represented in the zoomed area by the yellow rectangle.
+             An altitude grid is also represented where we can see the peak of intensity of the DHL
+             located at 500 km. Right: the red curve represent the inverted $I/F$ profile fitted
+             on the resampled data (orange errorbars). The uncertainties on the retrieved
+             extinction profile $\beta$ (in blue) is calculated to match the $1 \sigma$ dispersion
+             of the $I/F$ pixels. We can see that the model can explain the observation down to 300 km.
              The uncertainties increase rapidly when the intensity observed ($I/F$) is close
              to the noise level ($3\cdot10^{-3}$).}
     \label{fig:model_uncertainties}
