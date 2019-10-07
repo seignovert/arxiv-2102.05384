@@ -1,15 +1,15 @@
 %%
 %% This is file `Icarus.bst'  (Version 1.0),
-%% 
+%%
 %% Copyright 2009-2012 Elsevier Ltd
 %%
 %% Edits done by B. Seignovert (script.c)
 %% This work is under 2015 CC-BY-NC-SA 4.0
 %% (http://creativecommons.org/licenses/by-nc-sa/4.0/)
-%% 
+%%
 %% This file was edited from 'Elsarticle Bundle'.
 %% -----------------------------------------------
-%% 
+%%
 %% It may be distributed under the conditions of the LaTeX Project Public
 %% License, either version 1.2 of this license or (at your option) any
 %% later version.  The latest version of this license is in
@@ -550,7 +550,7 @@ FUNCTION {format.note}
 }
 
 % FUNCTION {format.title}
-% { title 
+% { title
 %   duplicate$ empty$ 'skip$
 %     { "t" change.case$ }
 %   if$
@@ -559,7 +559,7 @@ FUNCTION {format.note}
 FUNCTION {format.title}
 { title empty$
     { "" }
-    { title emphasize "t" change.case$ }  
+    { title emphasize "t" change.case$ }
   if$
 }
 
@@ -1306,13 +1306,11 @@ FUNCTION {misc}
   date.block
   format.title output
   new.block
+  format.booktitle "booktitle" output.check
+  new.block
   howpublished "howpublished" bibinfo.check output
   new.block
-  print.url output
   print.doi output
-  print.eprint output
-  print.pubmed output
-  format.note output
   fin.entry
 }
 
@@ -1757,7 +1755,7 @@ FUNCTION {begin.bib}
 }
 EXECUTE {begin.bib}
 EXECUTE {init.state.consts}
-EXECUTE {init.web.variables} 
+EXECUTE {init.web.variables}
 ITERATE {call.type$}
 FUNCTION {end.bib}
 { newline$
