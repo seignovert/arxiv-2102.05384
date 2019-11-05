@@ -2,7 +2,8 @@
 
 \subsection{Selection of observations}
 We conduct our survey on 139 images taken by the Cassini Image Sub-System Narrow Angle Camera (ISS-NAC) with the
-clear and ultra-violet filters (CL1-UV3). We choose the best possible sample among the 317 images available on the PDS
+clear and ultra-violet filters (CL1-UV3). At this wavelength (338 nm), ISS is sensitive to the scattered haze in the
+upper part of Titan's atmosphere (300-600 km). We choose the best possible sample among the 317 images available on the PDS
 to get the highest temporal and phase coverage. We kept only images taken with at least one day apart for the main study.
 We also kept specific sets of observations made few hours apart to study short term variations.
 
@@ -28,7 +29,7 @@ initialized with the SPICE kernels \citep{Acton1996, Annex2017}. Since the surfa
 the location of Titan center by fitting the limb intensity. Then, we calculated the planetocentric coordinates of each
 pixels and their altitude with respect to a mean spherical body with a radius of 2575 km.
 
-Intensity profiles are extracted every \ang{5} on both sides of the limb. Depending on the location of the
+Intensity profiles are extracted every \ang{5} on both sides of the limb. Depending on the
 latitude of the Sub-Cassini point on the ground, the sampling in latitude is not evenly distributed for each image.
 Therefore, the polar latitudes are usually less covered than the equator.
 We should also note that the solar illumination changes drastically during the
@@ -43,11 +44,11 @@ The effect of the multiple scattering is accounted as a correction with a factor
 applied to the volume scattering along line of sight.
 This technique was used successfully several time before \citep[e.g.][]{Rages1983, Rannou1997, Seignovert2017, West2018}.
 
-In the detached layer, the multiple scattering is mainly produced by the light coming from the atmosphere below. To
-evaluate $\varrho_k$, the scattering properties of the atmosphere are fixed once for all with a setup that allows to
+In the detached haze layer, the multiple scattering is mainly produced by the light coming from the atmosphere below. To
+evaluate $\varrho_k$, the scattering properties of the atmosphere are fixed once for all to
 reproduce the observed intensity of Titan in UV. With a radiative transfer model \citep[SHDOMPP, from ][]{Evans1998}
 we have access to the complete radiative source function at each level of the atmosphere. We are then able to compare the
-intensity that is scattered in the direction of the observer from the direct sun only and from the direct sun and the diffuse
+intensity that is scattered in the direction of the observer from the direct sun only and from the direct sun and the scattered
 field coming from below. $\varrho_k$ is defined as the ratio of multiple scattering to single scattering toward the observer
 for a given altitude and as a function of the incident and emergent angles. This parameter is pre-computed as a function
 altitude, incident and emergent angle and saved in a look-up table \citep[see.][for details]{West2018}.
@@ -59,12 +60,12 @@ ground to 200 km, $\Delta z =$ 10 km from 300 to 400 km and from 550 to 700 km. 
 $\Delta z$= 5 km between 400 and 550 km. This grid allows us to take advantage of the spatial resolution
 of the ISS NAC camera in the region of interest where is mainly located the DHL.
 
-Finally, we can write the outgoing radiance factor $I/F (z)$ as:
+We can write the outgoing radiance factor $I/F (z)$ as:
 
 \begin{equation}
 I/F (z) = \sum_{i=0}^{n_x-1} \int\limits_{x_k}^{x_{k+1}}
-\frac{\left< \varpi P(\Theta) \right>_k} {4}
-^{-\left( \tau^i_k\left(z\right) + \tau^e_k\left(z\right) \right)}
+\frac{\left< \varpi P(\Theta) \right>_k}{4}
+e^{-\left( \tau^i_k\left(z\right) + \tau^e_k\left(z\right) \right)}
 \beta_k\left(z\right) \varrho_k\left(z\right) d{x}
 \label{eq:west2017_sup_limb}
 \end{equation}
@@ -101,10 +102,9 @@ have to solve the formal equation:
 
 where the ${G}$ is a nonlinear function which depends on the values $\beta_i$ and on the viewing geometry of the observation.
 
-We could solve this system with a standard onion peeling technique.
-However, we observed a quick propagation of error on the retrieved $\beta_j$ at a given level, by the all the errors from the
-layers above ($\beta_i$).
-Instead, we decided to solve the system by minimizing globally the difference between the modelled $I/F$ and the observations
+We could solve this system with a standard onion peeling technique. However, we observed a quick propagation of error on
+the retrieved $\beta_j$ at a given level, resulting from all the errors from the layers above ($\beta_i$).
+Instead, we decided to solve the system by minimizing globally the difference between the modeled $I/F$ and the observations
 using a Levenberg-Marquardt minimization. Therefore, we obtain simultaneously all the $\beta_i$ at once.
 Moreover, the tangential opacity along a line of sight ($\tau_{los}$) is consider opaque when it value reach 3.
 Beyond this threshold, we do not retrieve the value of $\beta$.
