@@ -1,41 +1,34 @@
-\documentclass[review, authoryear, hidelinks]{elsarticle}
+\documentclass[manuscript,linenumbers]{aastex63}
 
-\usepackage{lineno, hyperref, siunitx, booktabs, cuted, numcompress, xcolor}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage{xspace}
 
-\journal{\textbf{XXXX}}
-\bibliographystyle{icarus} % Icarus bib style
+\newcommand{\ang}[1]{#1\degr}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
 
-\modulolinenumbers[1]
+% \received{--}
+% \revised{--}
+% \accepted{--}
+\submitjournal{Astrophysical Journal}
+
+\shorttitle{Titan's haze seasonal variations}
+\shortauthors{Seignovert et al.}
 
 \begin{document}
 
-\begin{frontmatter}
-    \title{Haze seasonal variations of Titan's upper atmosphere\\during the Cassini Mission}
+\title{Haze seasonal variations of Titan's upper atmosphere\\during the Cassini Mission}
 
-    \input{authors.tex}
-
-    \begin{abstract}
-        \input{0-abstract.tex}
-    \end{abstract}
-
-    \begin{keyword}
-    Cassini \sep Titan \sep Haze \sep Seasonal cycle
-    \end{keyword}
-\end{frontmatter}
-
-\begin{linenumbers}
-
-    \input{1-intro.tex}
-    \input{2-obs_model.tex}
-    \input{3-lat_variations.tex}
-    \input{4-local_variations.tex}
-    \input{5-comparisons.tex}
-    \input{6-conclusions.tex}
-    \input{7-acknowledgments.tex}
-
-\end{linenumbers}
+\input{authors.tex}
+\input{0-abstract.tex}
+\input{1-intro.tex}
+\input{2-obs_model.tex}
+\input{3-lat_variations.tex}
+\input{4-local_variations.tex}
+\input{5-comparisons.tex}
+\input{6-conclusions.tex}
+\input{7-acknowledgments.tex}
 
 \bibliography{biblio}
+\bibliographystyle{aasjournal}
 
 \end{document}

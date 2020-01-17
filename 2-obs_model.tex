@@ -7,17 +7,16 @@ upper part of Titan's atmosphere (300-600 km altitude). We choose the best sampl
 to get the highest temporal and phase coverage. For the main study we kept only images taken with at least a one-day gap.
 We also kept specific sets of observations made a few hours apart to study short-term variations.
 
-On average, the selected images are separated by 39 Earth days, \textit{i.e.} 2.5 Titan days (Fig.~\ref{fig:img_sampling}).
+On average, the selected images are separated by 39 Earth days, \ie 2.5 Titan days (Fig.~\ref{fig:img_sampling}).
 Although our sampling is not evenly distributed, due to orbital constraints and mission schedule, at least 90\% of the selected
-images are separated by less than 120 Earth days, \textit{i.e.} 7.5 Titan days. Two main gaps of data can be observed.
+images are separated by less than 120 Earth days, \ie 7.5 Titan days. Two main gaps of data can be observed.
 The first is between 28 March 2008 and 25 January 2009 (302 Earth days) and 26 November 2010 and 9 September 2011 (286 Earth days).
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\textwidth]{Fig/IMG_interval.png}
-    \caption{Image intervals (in Earth and Titan days) between consecutive ISS/NAC CL1-UV3 observations analyzed.
-        The length of the lines correspond to the duration between two acquisitions.}
-    \label{fig:img_sampling}
+\begin{figure}[ht!]
+\plotone{Fig/IMG_interval}
+\caption{Image intervals (in Earth and Titan days) between consecutive ISS/NAC CL1-UV3 observations analyzed.
+The length of the lines correspond to the duration between two acquisitions.}
+\label{fig:img_sampling}
 \end{figure}
 
 The selected images are calibrated using the CISSCAL routines (v3.8) provided on the Planetary Data System. To improve
@@ -38,9 +37,9 @@ season between the northern mid-winter to summer, which restricts our ability to
 
 To retrieve the haze extinction profiles from the intensity observations, we model the synthetic
 radiance factor ($I/F$) with a single scattering ray tracing model in a spherical shell geometry.
-The effect of multiple scattering is accounted for as a correction  $\varrho_k\left(z\right)$
+The effect of multiple scattering is accounted for as a correction $\varrho_k (z)$
 applied to the volume scattering along line of sight.
-This technique was used successfully several times before \citep[e.g.][]{Rages1983, Rannou1997, Seignovert2017, West2018}.
+This technique was used successfully several times before \citep[\eg][]{Rages1983, Rannou1997, Seignovert2017, West2018}.
 
 In the detached haze layer, the multiple scattering is mainly produced by the light coming from the atmosphere below. To
 evaluate $\varrho_k$, the scattering properties of the atmosphere are fixed to
@@ -105,21 +104,20 @@ Moreover, the tangential opacity along a line of sight ($\tau_{los}$) is conside
 Beyond this threshold, we do not retrieve the value of $\beta$.
 An example of inversion is presented in the figure~\ref{fig:model_uncertainties}.
 
-\begin{figure}[!ht]
-    \centering
-    \includegraphics[height=6.5cm]{Fig/N1551888681_sampling.png}
-    \includegraphics[height=6.5cm]{Fig/Model_uncertainties.png}
-    \caption{Left: Log scale representation of the $I/F$  for the image
-             \textbf{N1551888681\_1} taken in March, 2007. The data are sampled at the limb by
-             bins of \ang{5}. The red area correspond to the bin at the photometric
-             equator ([\ang{45}S, \ang{50}S] and [\ang{76}W, \ang{79}W]). The pixel scale
-             (7.9 km/pixel) is represented in the zoomed area by the yellow rectangle.
-             An altitude grid is also represented where we can see the peak of intensity of the DHL
-             located at 500 km. Right: the red curve represents the inverted $I/F$ profile fitted
-             on the resampled data (orange error bars). The uncertainties on the retrieved
-             extinction profile $\beta$ (in blue) is calculated to match the $1 \sigma$ distribution
-             of the $I/F$ pixels. The model fits the observations down to 300 km.
-             The uncertainties increase rapidly when observed ($I/F$) is close
-             to the noise level ($3\cdot10^{-3}$).}
-    \label{fig:model_uncertainties}
-\end{figure}
+\begin{figure*}[!ht]
+\includegraphics[width=.4\textwidth]{Fig/N1551888681_sampling}
+\includegraphics[width=.57\textwidth]{Fig/Model_uncertainties}
+\caption{Left: Log scale representation of the $I/F$  for the image
+\textbf{N1551888681\_1} taken in March, 2007. The data are sampled at the limb by
+bins of \ang{5}. The red area correspond to the bin at the photometric
+equator ([\ang{45}S, \ang{50}S] and [\ang{76}W, \ang{79}W]). The pixel scale
+(7.9 km/pixel) is represented in the zoomed area by the yellow rectangle.
+An altitude grid is also represented where we can see the peak of intensity of the DHL
+located at 500 km. Right: the red curve represents the inverted $I/F$ profile fitted
+on the resampled data (orange error bars). The uncertainties on the retrieved
+extinction profile $\beta$ (in blue) is calculated to match the $1 \sigma$ distribution
+of the $I/F$ pixels. The model fits the observations down to 300 km.
+The uncertainties increase rapidly when observed ($I/F$) is close
+to the noise level ($3\cdot10^{-3}$).}
+\label{fig:model_uncertainties}
+\end{figure*}

@@ -5,29 +5,28 @@ detached haze layer extinction profile at all latitudes below \ang{35}N (Fig.~\r
 to \ref{fig:dhl_2004_2008}c) between December 2004 and June 2005. Fortunately, Cassini took in June, 2005 a series of 9 images of
 Titan with a time-step of 80 minutes (Table.~\ref{tab:time_variability}).
 
-\begin{table}[!ht]
-    \centering
-    \caption{Sequence of 9 images of Titan taken June 4$^{th}$, 2005.
-    The longitude and local time are given for the profile at the equator
-    on the illuminated side of Titan.}
-    \vspace{.5cm}
-    \begin{tabular} {c c c c c}
-        \toprule
-        Image ID & Time (UTC) & Phase & Longitude (Eq) & Local Time (Eq)\\
-        \midrule
-        N1496548825\_1 & 03:32 & \ang{10.4} & \ang{10.7}W & 17:12 \\
-        N1496552665\_1 & 04:36 & \ang{10.3} & \ang{10.4}W & 17:17 \\
-        N1496557465\_1 & 05:56 & \ang{10.1} & \ang{10.6}W & 17:23 \\
-        N1496562265\_1 & 07:16 &  \ang{9.9} & \ang{13.1}W & 17:17 \\
-        N1496567065\_1 & 08:36 &  \ang{9.8} & \ang{13.4}W & 17:23 \\
-        N1496571865\_1 & 09:56 &  \ang{9.8} & \ang{13.9}W & 17:23 \\
-        N1496576665\_1 & 11:16 &  \ang{9.8} & \ang{14.3}W & 17:30 \\
-        N1496581465\_1 & 12:36 &  \ang{9.9} & \ang{14.7}W & 17:30 \\
-        N1496586265\_1 & 13:56 & \ang{10.1} & \ang{15.2}W & 17:36 \\
-        \bottomrule
-        \label{tab:time_variability}
-    \end{tabular}
-\end{table}
+\begin{deluxetable}{ccccc}
+\tablecaption{Sequence of 9 images of Titan taken June 4$^{th}$, 2005.
+The longitude and local time are given for the profile at the equator
+on the illuminated side of Titan.}
+\label{tab:time_variability}
+\tablewidth{0pt}
+\tablehead{
+\colhead{Image ID} & \colhead{Time (UTC)} & \colhead{Phase} &
+\colhead{Longitude (Eq)} & \colhead{Local Time (Eq)}
+}
+\startdata
+N1496548825\_1 & 03:32 & \ang{10.4} & \ang{10.7}W & 17:12 \\
+N1496552665\_1 & 04:36 & \ang{10.3} & \ang{10.4}W & 17:17 \\
+N1496557465\_1 & 05:56 & \ang{10.1} & \ang{10.6}W & 17:23 \\
+N1496562265\_1 & 07:16 &  \ang{9.9} & \ang{13.1}W & 17:17 \\
+N1496567065\_1 & 08:36 &  \ang{9.8} & \ang{13.4}W & 17:23 \\
+N1496571865\_1 & 09:56 &  \ang{9.8} & \ang{13.9}W & 17:23 \\
+N1496576665\_1 & 11:16 &  \ang{9.8} & \ang{14.3}W & 17:30 \\
+N1496581465\_1 & 12:36 &  \ang{9.9} & \ang{14.7}W & 17:30 \\
+N1496586265\_1 & 13:56 & \ang{10.1} & \ang{15.2}W & 17:36 \\
+\enddata
+\end{deluxetable}
 
 With multiple observations of Titan in a short period, we are able to validate our calibration and
 observe short time and local variability. Here, we analyze the sequence at three different
@@ -37,12 +36,11 @@ varies  between \ang{10}W and \ang{15}W whereas the solar local time on Titan va
 17:12 and 17:36.
 
 \begin{figure}[!ht]
-    \centering
-    \includegraphics[width=\textwidth]{Fig/Time_variability.png}
-    \caption{Extinction profiles for the series
-    of 9 images taken 80 minutes apart in June 2005 (cf. Table \ref{tab:time_variability}).
-    The global latitudinal map is shown in figure~\ref{fig:dhl_2004_2008}c.}
-    \label{fig:time_variability}
+\plotone{Fig/Time_variability}
+\caption{Extinction profiles for the series
+of 9 images taken 80 minutes apart in June 2005 (cf. Table \ref{tab:time_variability}).
+The global latitudinal map is shown in figure~\ref{fig:dhl_2004_2008}c.}
+\label{fig:time_variability}
 \end{figure}
 
 Figure~\ref{fig:time_variability} presents extinction profiles extracted from the analysis of these 9 images.
