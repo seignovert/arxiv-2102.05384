@@ -15,13 +15,15 @@ The first is between 28 March 2008 and 25 January 2009 (302 Earth days\change{/1
 
 \begin{figure}[ht!]
 \plotone{Fig/IMG_interval}
-\caption{\change{Timeline of the ISS/NAC CL1-UV3 images analyzed (vertical black ticks). The number of observations per 2 Earth months period (\ie 4 Titan days / $\Delta Ls \approx \ang{2}$) is reported with a green gradient scale.}}
+\caption{\change{Timeline of the ISS/NAC CL1-UV3 images analyzed (vertical black ticks). The number of observations per 2 Earth months period (\ie 4 Titan days / $\Delta Ls \approx \ang{2}$) is reported with a green gradient scale. The gray area correspond to the gaps with no available observations.}}
 \label{fig:img_sampling}
 \end{figure}
 
 The selected images are calibrated using the CISSCAL routines (v3.8) provided on the Planetary Data System. To improve
-the signal to noise ratio on the limb profile, we deconvolved the images with a Poisson Maximum a posteriori method
-(PMAP) using the point spread function (PSF) measured in-flight \citep{West2010}. The image pointing is
+the signal to noise ratio on the limb profile, we deconvolved the images with a Poisson Maximum A Posteriori
+(PMAP) method using the point spread function (PSF) measured in-flight \citep{West2010, Knowles2020}.
+\change{This deconvolution method is known to be efficient to restore fine strutures in astronomical images \citep{Hunt1996}.}
+The image pointing is
 initialized with the SPICE kernels \citep{Acton1996, Annex2020}. Since the surface of Titan is not visible in the UV, we improved
 the location of Titan's center by fitting the limb intensity. Then, we calculated the planetocentric coordinates of each
 pixel and their tangent point altitude with respect to a mean spherical body with a radius of 2575 km.
@@ -31,6 +33,7 @@ latitude of the Sub-Cassini point on the ground, the sampling in latitude is not
 Therefore, the polar latitudes are usually less covered than the equator.
 Also, the solar illumination changes drastically during the
 season between the northern mid-winter to summer, which restricts our ability to see both poles at the same time.
+\change{On average, the image pixel scale is about $10 \pm 5$~km.}
 
 
 \subsection{Model of scattering at the limb}
@@ -41,8 +44,8 @@ The effect of multiple scattering is accounted for as a correction $\varrho_k (z
 applied to the volume scattering along line of sight.
 This technique was used successfully several times before \citep[\eg][]{Rages1983, Rannou1997, Seignovert2017, West2018}.
 
-In the detached haze layer, the multiple scattering is mainly produced by the light coming from the atmosphere below. To
-evaluate $\varrho_k$, the scattering properties of the atmosphere are fixed to
+In the detached haze layer, the multiple scattering is mainly produced by the light coming from the \change{main haze} below. To
+evaluate $\varrho_k$, \change{we use a representative vertical profile of the main haze that}
 reproduce the observed intensity of Titan in the UV. With a radiative transfer model \citep[SHDOMPP, from ][]{Evans1998}
 we have access to the complete radiative source function at each level of the atmosphere. We are then able to compare the
 intensity that is scattered in the direction of the observer from the direct sun only and from the direct sun and the scattered
@@ -50,9 +53,10 @@ field coming from below. $\varrho_k$ is defined as the ratio of multiple scatter
 for a given altitude and as a function of the incident and emergent angles. This parameter is pre-computed as a function of
 altitude, incident and emergent angles and saved in a look-up table \citep[see.][for details]{West2018}.
 We find that the multiple scattering increases the scattered intensity at the limb of Titan in the UV by a ratio between
-1.05 and 1.15, depending on the geometry of the observation.
+1.05 and \change{1.20}, depending on the geometry of the observation.
+\change{This effect is included in our model. We also checked that significant changes in the main haze (single scattering albedo, the opacity and the vertical scale height) only affect the value of $\varrho_k$ by a few percent and can be neglected.}
 
-We discretize the atmosphere in $N=60$ irregular layers of various thickness : $\Delta z =$ 50 km from the
+We discretize the atmosphere in $N = 60$ irregular layers of various thickness : $\Delta z =$ 50 km from the
 ground to 200 km, $\Delta z =$ 25 km from 200 to 300 km, $\Delta z =$ 10 km from 300 to 400 km and from 550 to 700 km.
 Finally, we used $\Delta z$= 5 km between 400 and 550 km. This grid allows us to take advantage of the spatial resolution
 of the ISS NAC camera in the region of interest where is mainly located the DHL.
@@ -67,30 +71,17 @@ e^{-\left( \tau^i_k\left(z\right) + \tau^e_k\left(z\right) \right)}
 \label{eq:west2017_sup_limb}
 \end{equation}
 
-where the summation is performed on the $n_x-1$ segments defined by the intersections of the line of sight and the
-spherical shell boundaries. The impact parameter $z$ (the lowest altitude reached by the line of sight) is given by the
-bottom of the $n^\mathrm{th}$ layer crossed. Therefore, each layer of the atmosphere is crossed twice. $x$ is the
-abscissa along the line of sight. $\tau^i_k$ and $\tau^e_k$ are the opacities along the incident and emergent paths.
-$\left< \varpi P(\Theta)\right>_k$ is the average of the product of the single scattering and the phase function
-at the scattering angle of the observation $\Theta$ for the layer crossed on $x_k$.  $\beta_k(z)$ is the local
-extinction at altitude $z$. Here, the altitude $z(x)$ is the local altitude at point of abscissa $x$ along the
-line of sight.
+where the summation is performed on the $n_x-1$ segments defined by the intersections of the line of sight and the spherical shell boundaries. The impact parameter $z$ (the lowest altitude reached by the line of sight) is given by the bottom of the $n^\mathrm{th}$ layer crossed. Therefore, each layer of the atmosphere is crossed twice. $x$ is the abscissa along the line of sight. $\tau^i_k$ and $\tau^e_k$ are the opacities along the incident and emergent paths.
+$\left< \varpi P(\Theta)\right>_k$ is the average of the product of the single scattering and the phase function at the scattering angle of the observation $\Theta$ for the layer crossed on $x_k$.  $\beta_k(z)$ is the local extinction \change{coefficient} at altitude $z$ \change{(and the product of the haze cross-section and the local abunance)}. Here, the altitude $z(x)$ is the local altitude at point of abscissa $x$ along the line of sight.
 
 
 \subsection{Retrieval method}
 
-Based on our previous work \citep{Seignovert2017, West2018}, we make the assumption that the optical properties
-$\left<\varpi P(\Theta)\right>_k$ of the aerosols are constant in the upper part of Titan's atmosphere. This allows
-us to focus our study only on the retrieval of the extinction along the line of sight.
-In our model, the $I/F (z)$ intensity profiles depend on the set haze extinction profile $\beta(z)$ and the viewing
-geometry of the observation (incidence, emergence and phase angles).
-We assume no horizontal in-homogeneity along the line of sight \citep{Seignovert2017}. We retrieve a set of extinction values $\beta_i$ (
-the vector ${\beta}$), with $i$ the indices of the layers, that matches the values of the $I/F_i$
-(the vector $I/F$).
+Based on our previous work \citep{Seignovert2017, West2018}, we make the assumption that the optical properties $\left<\varpi P(\Theta)\right>_k$ of the aerosols are constant in the upper part of Titan's atmosphere. This allows us to focus our study only on the retrieval of the extinction along the line of sight.
+In our model, the $I/F (z)$ intensity profiles depend on the set haze extinction profile $\beta(z)$ and the viewing geometry of the observation (incidence, emergence and phase angles).
+We assume no horizontal in-homogeneity along the line of sight \citep{Seignovert2017}. We retrieve a set of extinction values $\beta_i$ (the vector ${\beta}$), with $i$ the indices of the layers, that matches the values of the $I/F_i$ (the vector $I/F$).
 
-From the Eq. (\ref{eq:west2017_sup_limb}), it is possible to cast the scattered intensity $I/F_i$, as a function of
-the extinction $\beta_j$ with $j \le i$. This forms a non-linear triangular system. To find the vector $\beta$, we
-have to solve the formal equation:
+From the Eq. (\ref{eq:west2017_sup_limb}), it is possible to cast the scattered intensity $I/F_i$, as a function of the extinction $\beta_j$ with $j \le i$. This forms a non-linear triangular system. To find the vector $\beta$, we have to solve the formal equation:
 
 \begin{equation}
     I/F = G(\beta)
@@ -100,9 +91,15 @@ where ${G}$ is a nonlinear function which depends on $\beta_i$ and on the viewin
 
 We solve the system by minimizing globally the difference between the modeled $I/F$ and the observations
 using a Levenberg-Marquardt minimization. Therefore, we obtain simultaneously all the $\beta_i$ at once.
-Moreover, the tangential opacity along a line of sight ($\tau_{los}$) is considered opaque when it reaches 3.
+Moreover, the tangential opacity along a line of sight ($\tau_{los}$) is considered opaque when it reaches 3 \change{(usually around 300 km in the UV)}.
 Beyond this threshold, we do not retrieve the value of $\beta$.
 An example of inversion is presented in the figure~\ref{fig:model_uncertainties}.
+
+\change{The uncertainties associated to the intensity profile ($I/F$) correspond to a $1 \sigma$ distribution of the observed $I/F$ for a given altitude within a \ang{5} bin in latitude.
+The number of pixels within a \ang{5} bin varies from one image to another and depends on the viewing geometry and the altitude sampled. Usually we have more than 1500 pixels per profile between 0 and 700 km.
+In the worse case scenarios (N1630432142\_1 at $6 \sigma$ of the average pixel scale) we have at least 120 pixels per profile.
+This allow us to resampled our observed profile on a vertical grid with layers smaller than the image pixel scale in the 500 km region.
+The uncertainties in the extinction profile ($\beta$) correspond to the minimum and maximum values required to fit the data within $1 \sigma$ of the observed $I/F$.}
 
 \begin{figure*}[!ht]
 \includegraphics[width=.4\textwidth]{Fig/N1551888681_sampling}
@@ -111,12 +108,11 @@ An example of inversion is presented in the figure~\ref{fig:model_uncertainties}
 \textbf{N1551888681\_1} taken in March, 2007. The data are sampled at the limb by
 bins of \ang{5}. The red area correspond to the bin at the photometric
 equator ([\ang{45}S, \ang{50}S] and [\ang{76}W, \ang{79}W]). The pixel scale
-(7.9 km/pixel) is represented in the zoomed area by the yellow rectangle.
+(7.9 km) is represented in the zoomed area by the yellow rectangle.
 An altitude grid is also represented where we can see the peak of intensity of the DHL
 located at 500 km. Right: the red curve represents the inverted $I/F$ profile fitted
-on the resampled data (orange error bars). The uncertainties on the retrieved
-extinction profile $\beta$ (in blue) is calculated to match the $1 \sigma$ distribution
-of the $I/F$ pixels. The model fits the observations down to 300 km.
+on the resampled data (orange error bars) \change{within a \ang{5} bin in latitude}.
+The uncertainties on the retrieved extinction profile $\beta$ (in blue) is calculated to match the $1 \sigma$ distribution of the $I/F$ pixels. The model fits the observations down to 300 km.
 The uncertainties increase rapidly when observed ($I/F$) is close
 to the noise level ($3\cdot10^{-3}$).}
 \label{fig:model_uncertainties}
