@@ -4,7 +4,7 @@
 occultations. The sensitivity to haze opacity of UVIS during a stellar occultation is much better than what ISS can achieve. However,
 while ISS probes the light scattered by the detached haze layer, UVIS probes the light transmitted through a tangential
 path at the limb. In both cases, an extinction profile can be retrieved. ISS can retrieve the extinction of the
-particles which scatter light, and under assumptions concerning the phase function and the single scattering albedo.
+particles which scatter light, and under assumptions concerning the phase function and the single scattering albedo \change{\citep{Seignovert2017, West2018}}.
 On the other hand, UVIS is able to retrieve the total extinction from transmission with no assumption about the haze
 particles. This difference is valuable because it may give information about the change in aerosol
 size with altitude. In practice, ISS sensitivity is not sufficiently sensitive to probe above
@@ -21,15 +21,18 @@ differences arising from comparing the extinction retrieved from scattering prop
 \plotone{Fig/UVIS_ISS}
 \caption{Comparisons between ISS and UVIS extinction profiles before the equinox.
 UVIS profiles are retrieved by \cite{Koskinen2011} during the T41 (2008/02/23) and T53 (2009/04/19) flybys.
-ISS profiles are retrieved for the images \textbf{N1585329510\_1} (2008/03/27) and
-\textbf{N1618568958\_1} (2009/04/16).
+ISS profiles are retrieved for the images N1585329510\_1 (2008/03/27) and
+N1618568958\_1 (2009/04/16).
 The UVIS profiles are scaled by a factor 0.15 to compensate the spectral dependence of the extinction
 cross section and overlap ISS retrievals.}
 \label{fig:uvis_iss}
 \end{figure}
 
-The two extinction profiles show a very good match
-between 450 and 550 km. Considering that UVIS and ISS profiles are not taken simultaneously and
+\change{The two profile can be compare in the 450 to 550 km altitude range.
+In the first case (Fig.~\ref{fig:uvis_iss}a), even if the profiles don't exactly overlaps, the ISS extinction profile presents a peak of extinction exactly at the same location as the one observed by UVIS. The drop, above and below the peak is more pronounced with ISS than with UVIS.
+In the second case (Fig.~\ref{fig:uvis_iss}b), the two profiles presents a excellent agreement with each over in the 450 to 550 km altitude range.}
+
+Considering that UVIS and ISS profiles are not taken simultaneously and
 they don't probe the same longitude, the results of the previous section demonstrate that these differences are
 consistent with the natural variabilities observed in the detached haze layer.
 This comparison is then a good validation of our results concerning the extinction profiles of the detached haze.
@@ -38,5 +41,5 @@ Above 575 km, UVIS extinction profiles show the presence of a secondary layer at
 by ISS. As shown by \cite{Cours2011}, ISS is only sensitive to the larger aerosols, those that scatter light, whereas
 UVIS is able to probe the extinction of all the particles, and especially the smaller ones which do not scatter.
 In theory, the difference between UVIS and ISS above 575 km may reveal a sharp change in aerosol size distribution.
-But, this layer is located at altitudes where the signal to noise is low and structure may be erased during the
-deconvolution process. Therefore, it is not possible to draw a safe conclusion from the ISS profiles above 575 km.
+But, this layer is located at altitudes where the signal to noise is low and \change{our model is no longer able to retrieve the extinction above this altitude.}
+Therefore, it is not possible to draw a safe conclusion from the ISS profiles above 575 km.
