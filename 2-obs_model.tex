@@ -22,9 +22,9 @@ The first is between 28 March 2008 and 25 January 2009 (302 Earth days\change{/1
 The selected images are calibrated using the CISSCAL routines (v3.8) provided on the Planetary Data System. To improve
 the signal to noise ratio on the limb profile, we deconvolved the images with a Poisson Maximum A Posteriori
 (PMAP) method using the point spread function (PSF) measured in-flight \citep{West2010, Knowles2020}.
-\change{This deconvolution method is known to be efficient to restore fine strutures in astronomical images \citep{Hunt1996}.}
-The image pointing is
-initialized with the SPICE kernels \citep{Acton1996, Annex2020}. Since the surface of Titan is not visible in the UV, we improved
+\change{This deconvolution method is known to be efficient to restore fine strutures in astronomical images \citep{Hunt1996}.
+In our case, the main source of light is always Titan and is resolved inside the field of view of the camera (Fig.~\ref{fig:model_uncertainties}a). Therefore, we don't expect to see a significant contribution of the stray light in this configuration \citep{West2010}.}
+The image pointing is initialized with the SPICE kernels \citep{Acton1996, Annex2020}. Since the surface of Titan is not visible in the UV, we improved
 the location of Titan's center by fitting the limb intensity. Then, we calculated the planetocentric coordinates of each
 pixel and their tangent point altitude with respect to a mean spherical body with a radius of 2575 km.
 
