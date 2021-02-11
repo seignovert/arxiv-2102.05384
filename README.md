@@ -7,7 +7,7 @@ Haze seasonal variations of Titan's upper atmosphere during the Cassini Mission
     ![doi: 10.3847/1538-4357/abcd3b](https://img.shields.io/badge/doi-10.3847/1538--4357/abcd3b-blue.svg)
 ][doi]
 [
-    ![arXiv: 2102.xxxxx](https://img.shields.io/badge/arXiv-2102.xxxxx-orange.svg)
+    ![arXiv: 2102.05384](https://img.shields.io/badge/arXiv-2102.05384-orange.svg)
 ][arxiv]
 [
     ![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)
@@ -25,5 +25,5 @@ All these observations bring new perspectives on the seasonal cycle of Titan's u
 
 
 [doi]: https://doi.org/10.3847/1538-4357/abcd3b
-[arxiv]: https://arxiv.org/abs/2102.xxxxx
+[arxiv]: https://arxiv.org/abs/2102.05384
 [license]: https://creativecommons.org/licenses/by-nc-sa/4.0/
